@@ -1,6 +1,8 @@
 package com.softworkshub.a7minworkout
 
 import android.annotation.SuppressLint
+import android.media.MediaPlayer
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,6 +11,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.softworkshub.a7minworkout.databinding.ActivityExerciseBinding
+import java.lang.Exception
 import java.util.Locale
 
 class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -25,6 +28,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var currentExercisePosition = -1
 
     private var tts: TextToSpeech? = null
+
+    private var player : MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +58,17 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
     private fun setUpRestView() {
+
+        try {
+            val soundUri = Uri.parse("android.resource://com.softworkshub.a7minworkout/" + R.raw.loud_alarm_sound)
+            player = MediaPlayer.create(applicationContext,soundUri)
+            player?.isLooping = false
+            player?.start()
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
+
+
         binding?.restView?.visibility = View.VISIBLE
         binding?.tvTitle?.visibility = View.VISIBLE
         binding?.tvExerciseName?.visibility = View.INVISIBLE
@@ -158,6 +174,10 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         if (tts != null){
             tts!!.stop()
             tts!!.shutdown()
+        }
+
+        if (player != null){
+            player!!.stop()
         }
 
         super.onDestroy()
