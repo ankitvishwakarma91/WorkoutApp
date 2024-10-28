@@ -13,10 +13,10 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.softworkshub.a7minworkout.databinding.ActivityExerciseBinding
 import com.softworkshub.a7minworkout.databinding.CustomDialogBackOptionsBinding
 import java.lang.Exception
+import java.util.ArrayList
 import java.util.Locale
 
 class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {

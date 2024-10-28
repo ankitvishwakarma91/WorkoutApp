@@ -21,10 +21,10 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/item_color_accent_border_ripple_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/item_color_accent_border_ripple_bg"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
 
@@ -41,5 +41,144 @@
 
     </FrameLayout>
 
+
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/flBmi"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        android:background="@drawable/item_circular_color_accent_background"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/flStart">-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvBMI"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:text="BMI"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="@dimen/default_button_textSize"-->
+    <!--            android:textStyle="bold" />-->
+    <!--    </FrameLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="CALCULATOR"-->
+    <!--        android:textSize="22sp"-->
+    <!--        android:textColor="@color/colorAccent"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/flBmi"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/flHistory"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        android:background="@drawable/item_circular_color_accent_background"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/flStart">-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tvHistory"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:text="BMI"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="@dimen/default_button_textSize"-->
+    <!--            android:textStyle="bold" />-->
+    <!--    </FrameLayout>-->
+
+
+
+
+    <LinearLayout
+        android:id="@+id/llMainScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/flStart">
+
+        <FrameLayout
+            android:id="@+id/flBmi"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/item_circular_color_accent_background"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvBMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="BMI"
+                android:textColor="@color/white"
+                android:textSize="@dimen/default_button_textSize"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flHistory"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/item_circular_color_accent_background">
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvHistory"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text="HISTO"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="@dimen/default_button_textSize"-->
+<!--                android:textStyle="bold" />-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/historypng" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvCal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:text="CALCULATOR"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llMainScreen" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="HISTORY"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintStart_toEndOf="@+id/tvCal"
+        app:layout_constraintTop_toBottomOf="@id/llMainScreen" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
