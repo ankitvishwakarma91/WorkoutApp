@@ -15,7 +15,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/colorAccent" />
 
+    <TextView
+        android:id="@+id/tvExrciseComp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EXERCISE COMPLETED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_historyScreen" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistoryScreen"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/history_row"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tvExrciseComp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvHistoryNoDataAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No data Avaiable"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvExrciseComp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
